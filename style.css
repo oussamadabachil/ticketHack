@@ -20,7 +20,7 @@
 
 
 header{
-    height: 5rem;
+    height: 4.5rem;
     background-color: white;
     padding: 1rem;
     align-items: center;
@@ -37,7 +37,7 @@ body{
 }
 
 header h1{
-    color: rgb(165,204,190);
+    color: rgb(114,169,146);
     grid-area: 1 / 1 / 2 / 2; 
 }
 
@@ -48,10 +48,16 @@ header ul{
     display: grid; 
     grid-template-columns: repeat(2,1fr);
     grid-area: 1 / 9 / 2 / 11;
-    font-size: 1.2rem;
     font-weight: 300;
 }
 
+header ul li a{
+    text-decoration: none;
+    color: black;
+    font-family: CASRegular;
+    font-size: 1rem;
+
+}
 
 main section h2 {
     padding-top: 3rem;
@@ -65,14 +71,22 @@ main section h2 {
     text-align: center;
     color: white;
 }
-
+.container-trips.calendar{
+    position: relative;
+}
 .container-grid{
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(2,1fr);
 
     width: 70%;
-    margin: 0 auto;
+    margin: 2rem auto;
+
+}
+
+#search-button{
+    position: absolute;
+    bottom: 0;
 
 }
 
@@ -80,11 +94,19 @@ main section h2 {
 .container-grid>div{
     background-color: white;
 }
+.container-grid>div{
+    position: relative;
+    margin: 0 auto;
+    width: 25rem;
+    height: 27rem;
+    border-radius: .4rem;
+}
 .container-grid>div>.inputs{
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .container-grid>div>.inputs *{
+    font-family: CASRegular;
     padding: .8rem;
     border-radius: .3rem;
     background-color:rgba(128, 128, 128, 0.199);
@@ -95,4 +117,37 @@ main section h2 {
 }
 .container-grid>div>.inputs>input:last-child{
     border-top: .1rem solid rgba(0, 0, 0, 0.262);
+}
+
+.container-grid>div>.input-date>input{
+    font-family: CASRegular;
+    padding: .8rem;
+    border-radius: .3rem;
+    background-color:rgba(128, 128, 128, 0.199);
+    border: none;
+    display: block;
+
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.container-trips>figure>img{
+
+    flex-direction: column;
+    align-items: center;
+    display: block;
+    width: 10rem;
+    margin: 5rem auto 2.5rem;
+}
+.container-trips>figure>hr{
+    background-color: rgb(114,169,146);
+    margin: 0 auto;
+    width: 90%;
+}
+
+.container-trips>figure>figcaption>p{
+    font-family: CASRegular;
+    text-align: center;
+    margin-top:3rem ;
+
 }
