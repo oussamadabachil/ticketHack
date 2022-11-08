@@ -95,4 +95,23 @@ main section h2 {
 }
 .container-grid>div>.inputs>input:last-child{
     border-top: .1rem solid rgba(0, 0, 0, 0.262);
+    
 }
+
+#search-button {
+    display: block;
+    width: 33vw;
+    padding: 6px;
+    border: 2px #ffffff solid;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: #0cba83;
+    font-size: 16px;
+    position: absolute;
+    bottom: 25px;
+    margin-left: 10px;
+  }
+  .container-trips.calendar{
+
+position: relative;
+  }
