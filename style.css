@@ -171,6 +171,10 @@ main section h2 {
     font-size: 16px;
     position: absolute;
   }
+
+  #search-button:hover {
+    outline: 1px #ffffff solid;
+  }
   .container-trips.calendar{
     position: relative;
   }
