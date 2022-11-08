@@ -1,0 +1,98 @@
+*{
+    font-family: CAS;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family:CAS;
+    src: url(./fonts/CASaygonText-Bold/CASaygonText-Bold.ttf);
+}
+@font-face {
+    font-family:CASRegular;
+    src: url(./fonts/CASaygonText-Bold/CASaygonText-Light/CASaygonText-Regular/CASaygonText-Regular.ttf);
+}
+
+@font-face {
+    font-family:CASLight;
+    src: url(./fonts/CASaygonText-Bold/CASaygonText-Light/CASaygonText-Light.ttf)
+}
+
+
+header{
+    height: 5rem;
+    background-color: white;
+    padding: 1rem;
+    align-items: center;
+    display: grid; 
+    grid-template-columns: repeat(10, 1fr); 
+    grid-template-rows: repeat(5, 1fr); 
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+}
+
+body{
+    background-image: url(./images/background.jpg);
+    background-size: cover;
+}
+
+header h1{
+    color: rgb(165,204,190);
+    grid-area: 1 / 1 / 2 / 2; 
+}
+
+
+header ul{
+    font-family: CASLight;
+    list-style: none;
+    display: grid; 
+    grid-template-columns: repeat(2,1fr);
+    grid-area: 1 / 9 / 2 / 11;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+
+main section h2 {
+    padding-top: 3rem;
+    font-family: CASRegular;
+    text-align: center;
+    font-size: 2.3rem;
+    color: white;
+} main section  p {
+    font-size: 1.8rem;
+    font-family: CASLight;
+    text-align: center;
+    color: white;
+}
+
+.container-grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2,1fr);
+
+    width: 70%;
+    margin: 0 auto;
+
+}
+
+
+.container-grid>div{
+    background-color: white;
+}
+.container-grid>div>.inputs{
+    padding: 1rem;
+}
+
+.container-grid>div>.inputs *{
+    padding: .8rem;
+    border-radius: .3rem;
+    background-color:rgba(128, 128, 128, 0.199);
+    border: none;
+    display: block;
+
+    width: 100%;
+}
+.container-grid>div>.inputs>input:last-child{
+    border-top: .1rem solid rgba(0, 0, 0, 0.262);
+}
