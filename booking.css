@@ -32,7 +32,6 @@ header{
 }
 
 body{
-    background-image: url(./images/background.jpg);
     background-size: cover;
 }
 
@@ -87,19 +86,9 @@ main section h2 {
 #search-button{
     position: absolute;
     bottom: 0;
-    transition: all .3s;
-    
+
 }
 
-#search-button:hover {
-    outline: 1px #ffffff solid;
-    background-color: rebeccapurple;
-    transition:  all .3s;
-    width: 20%;
-    margin: 0 auto;
-
-
-  }
 
 .container-grid>div{
     background-color: white;
@@ -149,6 +138,9 @@ main section h2 {
 
 }
 
+
+
+
 .container-grid>div>.input-date>input{
     font-family: CASRegular;
     padding: .8rem;
@@ -186,4 +178,7 @@ main section h2 {
     position: relative;
   }
 
-
+  h1>a{
+    text-decoration: none;
+    color: rgb(113,169,144);;
+  }
