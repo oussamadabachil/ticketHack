@@ -111,6 +111,10 @@ main section h2 {
     bottom: 25px;
     margin-left: 10px;
   }
+
+  #search-button:hover {
+    outline: 1px #ffffff solid;
+  }
   .container-trips.calendar{
 
 position: relative;
