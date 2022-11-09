@@ -81,7 +81,6 @@ main section {
     transform: translate(-50%, -50%);
     height: 25rem;
 }
-
 .cart-list>.list-group-item{
     border-radius: .3rem;
     vertical-align: middle;
@@ -109,20 +108,13 @@ main section {
     background-color: rgb(114,169,146);
 }
 .cart-list{
-
-    height: 13rem;
+    display: block;
+    margin: 3rem auto;
+    height: 11rem;
     overflow-y: scroll;
 
 }
-main section  div{
-    
-    padding: 1rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgb(10, 28, 71);
-}
+
 main section div p {
     color: white;
 
@@ -147,7 +139,7 @@ main>section>div>p>.purchase-btn{
 
 }
 main section h2 {
-    padding-top: 3rem;
+    margin-top: 2rem;
     color: black;
 
     font-family: CASRegular;
@@ -155,9 +147,15 @@ main section h2 {
     text-align: center;
     font-size: 2.3rem;
 } main section  p {
-    font-size: 1.8rem;
+    padding: .75rem;
+    font-size: 1rem;
     color: black;
 
     font-family: CASLight;
     text-align: center;
+}
+main section hr{
+    display: block;
+    width: 20%;
+    margin: 0 auto;
 }

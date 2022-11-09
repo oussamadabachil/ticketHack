@@ -5,6 +5,7 @@ var logger = require('morgan');
 
 var tripsRouter = require("./routes/trips")
 var cartRouter = require("./routes/cart")
+var bookRouter = require("./routes/book")
 var app = express();
 
 const cors = require('cors');
@@ -14,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use('/book', bookRouter);
 app.use('/trips',tripsRouter)
 app.use('/cart',cartRouter)
 

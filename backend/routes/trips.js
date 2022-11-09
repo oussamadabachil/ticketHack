@@ -33,64 +33,29 @@ router.get("/getTrip/:departure/:arrival/:date",(req,res)=>{
 
 
 
-
-    
     trips.find({
         departure:departure,
         arrival:arrival,
          date: { $gte: moment(date).startOf('day'), $lte: moment(date).endOf('day') },
     }).then(data=>{
       
-       
-        //display only the date of the trip
-       
+    let fullDay = new Date(date).getTime()
+    let fullDayOftheTrip =  new Date(data[0].date).getTime()
+    if(fullDayOftheTrip>=dateOfTheDay){       
         
         if(data.length>0){
-           // if(new Date(data.date).getTime()>=dateOfTheDay){
-
-
-        //      let dateOfTheTrip = new Date(data.date).getTime()
-        // if(dateOfTheTrip>dateOfTheDay){
-            res.json({result:true,data})
+         res.json({result:true,data})
         
         }
-    //}
+    
     else{
             res.json({result:false,message:"No trip found"})
         }
-    })
+    }
 })
 
-    
-//     let departure = req.params.departure
-//     let arrival = req.params.arrival
-//     let date = req.params.date
 
+})
 
-//     console.log(departure,arrival,date)
-//     let newDate = new Date(date).toLocaleDateString("en")
-//    trips.find({departure:departure,arrival:arrival,date:newDate}).then(data=>{
-//             console.log(data)
-//             res.json(data)
-
-//             console.log(data)
-//         })
-    
-    // let departure = req.params.departure
-    // let arrival = req.params.arrival
-    // let timestamp = req.params.timestamp
-    // let date = timestamp.split("T")
-    // let dateInput = date[0]
-    // let dateInputNew = new Date(dateInput).getTime()
-
-    // trips.find({departure:departure,arrival:arrival,timestamp:dateInputNew}).then(data=>{
-    //     console.log(data)
-    //     res.json(data)
-    // })
-    
-
-
-
-/* GET home page. */
 
 module.exports = router;
