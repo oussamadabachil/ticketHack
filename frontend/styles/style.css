@@ -93,15 +93,6 @@ main section h2 {
     
 }
 
-#search-button:hover {
-    outline: 1px #ffffff solid;
-    background-color: rebeccapurple;
-    transition:  all .3s;
-    width: 20%;
-    margin: 0 auto;
-
-
-  }
 
 .container-grid>div{
     background-color: white;
