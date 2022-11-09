@@ -5,14 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicketHack</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
     <header class="container">
         <h1>Tickethack</h1>
         <ul>
-            <li><a href="">Cart</a></li>
-            <li><a href="">Bookings</a></li>
+            <li><a href="./cart.html">Cart</a></li>
+            <li><a href="./booking.html">Bookings</a></li>
         </ul>
     </header>
     <main>
@@ -25,12 +29,12 @@
             <div class="container-trips calendar">
 
                 <div class="inputs input-text-departure-arrival">
-                    <input type="text" name="departure" id="departure" placeholder="Departure">
-                    <input type="text" name="arrival" id="arrival" placeholder="Arrival">
+                    <input type="text" name="departure" id="departure" value="Bruxelles" placeholder="Departure">
+                    <input type="text" name="arrival" id="arrival" value="Marseille" placeholder="Arrival">
                 </div>
 
                 <div class="input-date">
-                    <input type="date" name="date" id="date">
+                    <input type="date" value="2022-11-08" name="date" id="date">
                 </div>
 
                 <button id="search-button">Search</button>
@@ -39,8 +43,9 @@
             </div>
 
             <div class="container-trips train choice">
-                <figure>
-                    <img src="./images/train.png" alt="train ">
+                <ul class="list-group"></ul>
+                <figure id="figure">
+                    <img src="./images/train.png" alt="train">
                     <hr>
                     <figcaption>
                         <p>It's time to book your future trip</p>
@@ -52,7 +57,7 @@
     </main>
 
     <footer>
-        <script src="./script.js"></script>
+        <script src="./js/script.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     </footer>

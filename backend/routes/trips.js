@@ -4,9 +4,11 @@ var router = express.Router();
 require('../models/connexion')
 const trips = require('../models/trips')
 
+let dateOfTheDay = new Date().getTime()
 
 
 router.get("/",(req,res)=>{
+    
     trips.find().then(data=>{
         console.log(data)
         res.json(data)
@@ -20,22 +22,40 @@ router.get("/getTrip/:departure/:arrival/:date",(req,res)=>{
     let departure = req.params.departure
     let arrival = req.params.arrival
     let date = req.params.date  
+    
 
-    let newDate = moment(date).format("YYYY-MM-DD")
+    // let newDate = moment(date).format("YYYY-MM-DD")
 
 
    
     //let newDate = new Date(date).toLocaleDateString("en")
     //console.log(newDate)
+
+
+
+
+    
     trips.find({
         departure:departure,
         arrival:arrival,
-        date:newDate
+         date: { $gte: moment(date).startOf('day'), $lte: moment(date).endOf('day') },
     }).then(data=>{
+      
+       
+        //display only the date of the trip
+       
+        
         if(data.length>0){
-            console.log(data)
-            res.json(data)
-        }else{
+           // if(new Date(data.date).getTime()>=dateOfTheDay){
+
+
+        //      let dateOfTheTrip = new Date(data.date).getTime()
+        // if(dateOfTheTrip>dateOfTheDay){
+            res.json({result:true,data})
+        
+        }
+    //}
+    else{
             res.json({result:false,message:"No trip found"})
         }
     })

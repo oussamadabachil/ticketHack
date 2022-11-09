@@ -6,16 +6,17 @@
 }
 @font-face {
     font-family:CAS;
-    src: url(./fonts/CASaygonText-Bold/CASaygonText-Bold.ttf);
+    src: url(../fonts/CASaygonText-Bold/CASaygonText-Bold.ttf);
+
 }
 @font-face {
     font-family:CASRegular;
-    src: url(./fonts/CASaygonText-Bold/CASaygonText-Light/CASaygonText-Regular/CASaygonText-Regular.ttf);
+    src: url(../fonts/CASaygonText-Bold/CASaygonText-Light/CASaygonText-Regular/CASaygonText-Regular.ttf);
 }
 
 @font-face {
     font-family:CASLight;
-    src: url(./fonts/CASaygonText-Bold/CASaygonText-Light/CASaygonText-Light.ttf)
+    src: url(../fonts/CASaygonText-Bold/CASaygonText-Light/CASaygonText-Light.ttf)
 }
 
 
@@ -32,7 +33,7 @@ header{
 }
 
 body{
-    background-image: url(./images/background.jpg);
+    background-image: url(../images/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -120,10 +121,41 @@ main section h2 {
     border-top: .1rem solid rgba(0, 0, 0, 0.262);
     
 }
+.list-group{
+    display: none;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 1rem;
+
+}
+.list-group>li{
+    position: relative;
+    font-family: CASRegular;
+    margin-bottom: 1rem;
+    list-style: none;
+    padding: 1rem;
+    background-color: rgb(245, 240, 239);
+    border-radius: .3rem;
+
+
+}
+.list-group>li>span{
+    position: absolute;
+    cursor: pointer;
+    right: 1rem;
+    top: .45rem;
+
+    font-family: CASRegular;
+
+    padding: .5rem;
+    background-color: rgba(93, 192, 93, 0.688);
+    border-radius: .3rem;
+    color: white;
+}
 .container-trips>figure>img{
     display: block;
     width: 14rem;
-    margin: 0 auto;
+    margin: 2rem auto;
 
 }
 .container-trips>figure>figcaption>p{
@@ -157,6 +189,7 @@ main section h2 {
 }
 
 #search-button {
+    cursor: pointer;
     font-family:CASRegular;
 
     top: 90%;
@@ -173,8 +206,14 @@ main section h2 {
     position: absolute;
   }
 
-  #search-button:hover {
-    outline: 1px #ffffff solid;
+  #search-button:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(113,169,144);
+    border: 2px #ffffff solid;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   
+        
+    transition: all .3s;
   }
   .container-trips.calendar{
     position: relative;
