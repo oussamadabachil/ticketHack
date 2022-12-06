@@ -1,46 +1,52 @@
 var express = require('express');
 var router = express.Router();
-require('../models/connexion')
-const trips = require('../models/trips')
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-let arrayBook = []
+const Trip = require('../models/trips');
+const Booking = require('../models/bookings');
+const { checkBody } = require('../modules/checkBody');
 
-router.post('/idTrip', (req, res) => {
-
-  //faire une boucle pour verifier si l'id est deja dans le tableau
-  if (arrayBook.includes(req.body.idTrip)) {
-    res.json("you already booked this trip")
-  }
-  else {
-    res.json("you booked this trip")
-    arrayBook.push(req.body.idTrip)
-    console.log(arrayBook)
+router.post('/', (req, res) => {
+  if (!checkBody(req.body, ['tripId'])) {
+    res.json({ result: false, error: 'Missing trip ID' });
+    return;
   }
 
-})
+  Trip.findById(req.body.tripId).then(trip => {
+    if (trip) {
+      const newBooking = new Booking({
+        trip: trip._id,
+        isPaid: false,
+      });
 
-router.get('/idTrip', (req, res) => {
-
-  for (let i = 0; i < idOrder.length; i++) {
-
-
-    trips.findById(idOrder[0], (err, data) => {
-      if (err) {
-        res.json(err)
-      } else {
-        res.json(data)
-        idOrder.shift()
-
-      }
+      newBooking.save().then(() => {
+        res.json({ result: true });
+      });
+    } else {
+      res.json({ result: false, error: 'Trip not found' });
     }
-    )
+  });
+});
 
-  }
-})
+router.get('/', (req, res) => {
+  Booking.find({ isPaid: false })
+    .populate('trip')
+    .then(bookings => {
+      if (bookings.length > 0) {
+        res.json({ result: true, bookings });
+      } else {
+        res.json({ result: false, error: 'No bookings found' });
+      }
+    });
+});
 
+router.delete('/:tripId', (req, res) => {
+  Booking.deleteOne({ trip: req.params.tripId }).then(({ deletedCount }) => {
+    Booking.find({ isPaid: false })
+      .populate('trip')
+      .then(bookings => {
+        res.json({ result: deletedCount > 0, bookings });
+      });
+  });
+});
 
 module.exports = router;

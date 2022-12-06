@@ -1,66 +1,49 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicketHack</title>
-    <link rel="stylesheet" href="./styles/style.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <title>Tickethack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&family=Work+Sans:wght@300;400&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-    <header class="container">
-        <h1>Tickethack</h1>
-        <ul>
-            <li><a href="./cart.html">Cart</a></li>
-            <li><a href="./booking.html">Bookings</a></li>
-            
-        </ul>
-    </header>
-    <main>
-        <section class="container">
-            <h2>Explore the world effortless by train</h2>
-            <p>Compare book , enjoy cheap prices for train tickets : your journey starts on TicketHack</p>
-        </section>
+  <div id="header">
+    <h1><a id="title" href="index.html">Tickethack</a></h1>
+    <div>
+      <a class="link" href="cart.html">Cart</a> <a class="link" href="bookings.html">Bookings</a>
+    </div>
+  </div>
 
-        <div class="container-grid">
-            <div class="container-trips calendar">
+  <div id="container">
+    <div id="description">
+      <h2>Explore the world effortlessly by train!</h2>
+      <h3>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</h3>
+    </div>
 
-                <div class="inputs input-text-departure-arrival">
-                    <input type="text" name="departure" id="departure" value="" placeholder="Departure">
-                    <input type="text" name="arrival" id="arrival" value="" placeholder="Arrival">
-                </div>
+    <div id="card-container">
+      <div id="card">
+        <input class="input" id="departure" type="text" placeholder="Departure" />
+        <div class="divider"></div>
+        <input class="input" id="arrival" type="text" placeholder="Arrival" />
+        <input class="input" id="date" type="date" placeholder="Date" />
+        <button id="search">Search</button>
+      </div>
 
-                <div class="input-date">
-                    <input type="date" value="" name="date" id="date">
-                </div>
+      <div id="results">
+        <img id="results-logo" src="images/train.png" />
+        <div class="divider green"></div>
+        <span>It's time to book your future trip.</span>
+      </div>
+    </div>
+  </div>
 
-                <button id="search-button">Search</button>
-            
-
-            </div>
-
-            <div class="container-trips train choice">
-                <ul class="list-group"></ul>
-                <figure id="figure">
-                    <img src="./images/train.png" alt="train">
-                    <hr>
-                    <figcaption>
-                        <p>It's time to book your future trip</p>
-                    </figcaption>
-                </figure>    
-            </div>
-        </div>
-       
-    </main>
-
-    <footer>
-        <script src="./js/script.js"></script>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.3/moment.min.js"></script>
+  <script src="index.js"></script>
 </body>
+
 </html>

@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tickethack</title>
-    <link rel="stylesheet" href="./booking.css">
+  <title>Tickethack - Bookings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bookings.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&family=Work+Sans:wght@300;400&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-    <header class="container">
-        <h1><a href="/index.html">Tickethack</a></h1>
-        <ul>
-            <li><a href="/cart.html">Cart</a></li>
-            <li><a href="/booking.html">Bookings</a></li>
-        </ul>
-    </header>
-    <main>
-        <section class="container">
-        </section>
+  <div id="header">
+    <h1><a id="title" href="index.html">Tickethack</a></h1>
+    <div>
+      <a class="link" href="cart.html">Cart</a> <a class="link" href="bookings.html">Bookings</a>
+    </div>
+  </div>
 
+  <div id="container">
+    <div id="trips">
+      <p>No booking yet.</p>
+      <p>Why not plan a trip?</p>
+    </div>
 
-        <div class="container-grid">
-            </div>
+    <div id="trips2" style="display: none;"></div>
+  </div>
 
-        
-        </div>
-       
-    </main>
-
-    <footer>
-        <script src="./script.js"></script>
-    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.3/moment.min.js"></script>
+  <script src="bookings.js"></script>
 </body>
+
 </html>
